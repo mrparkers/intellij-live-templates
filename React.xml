@@ -1,0 +1,41 @@
+<templateSet group="React">
+  <template name="RT" value="import $ComponentName$ from '../../src/$ComponentPath$$END$';&#10;&#10;import React from 'react';&#10;import ReactDOM from 'react-dom'&#10;import ReactTestUtils from 'react/lib/ReactTestUtils';&#10;&#10;import Chance from 'chance';&#10;import {expect} from 'chai';&#10;&#10;describe('$ComponentName$', () =&gt; {&#10;    let renderedElement,&#10;        renderedNode,&#10;        chance;&#10;        &#10;    function renderComponent() {&#10;        const componentElement = React.createElement($ComponentName$);&#10;&#10;        renderedElement = ReactTestUtils.renderIntoDocument(componentElement);&#10;&#10;        renderedNode = ReactDOM.findDOMNode(renderedElement);&#10;    }&#10;&#10;    beforeEach(() =&gt; {&#10;        chance = new Chance();&#10;        &#10;        renderComponent();&#10;    });&#10;&#10;    it('should have a root DOM element', () =&gt; {&#10;        expect(renderedNode.tagName).to.equal('$tagName$');&#10;        expect(renderedNode.className).to.equal('$ComponentPath$');&#10;    });&#10;});&#10;" description="React Component Test" toReformat="false" toShortenFQNames="true">
+    <variable name="ComponentName" expression="capitalize(underscoresToCamelCase(snakeCase(fileNameWithoutExtension)))" defaultValue="" alwaysStopAt="true" />
+    <variable name="ComponentPath" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <variable name="tagName" expression="" defaultValue="DIV" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="RC" value="import React from 'react';&#10;&#10;export default class extends React.Component {&#10;    componentDidMount() {&#10;        require('../sass/$sassFileName$.scss');&#10;    }&#10;&#10;    render() {&#10;        return (&#10;            &lt;$elementType$ className=&quot;$className$&quot;&gt;&#10;                $END$&#10;            &lt;/$elementType$&gt;&#10;        );&#10;    }&#10;}&#10;" description="React Component" toReformat="false" toShortenFQNames="true">
+    <variable name="sassFileName" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <variable name="elementType" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="className" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ce" value="React.createElement($elementName$, {&#10;    $END$&#10;});" description="React.createElement" toReformat="false" toShortenFQNames="true">
+    <variable name="elementName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="RTS" value="import $ComponentName$ from '../../src/$ComponentPath$$END$';&#10;&#10;import React from 'react';&#10;import {shallow} from 'enzyme';&#10;&#10;import Chance from 'chance';&#10;import {expect} from 'chai';&#10;&#10;describe('$ComponentName$', () =&gt; {&#10;    let renderedElement,&#10;        chance;&#10;        &#10;    function renderComponent() {&#10;        const componentElement = React.createElement($ComponentName$);&#10;&#10;        renderedElement = shallow(componentElement);&#10;    }&#10;&#10;    beforeEach(() =&gt; {&#10;        chance = new Chance();&#10;        &#10;        renderComponent();&#10;    });&#10;&#10;    it('should have a root DOM element', () =&gt; {&#10;        expect(renderedElement.node.type).to.equal('$tagName$');&#10;        expect(renderedElement.props().className).to.equal('$ComponentPath$');&#10;    });&#10;});" description="React Component Test With Shallow Rendering" toReformat="false" toShortenFQNames="true">
+    <variable name="ComponentName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ComponentPath" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="tagName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JSX_HTML" value="false" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

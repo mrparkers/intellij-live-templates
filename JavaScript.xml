@@ -1,0 +1,123 @@
+<templateSet group="JavaScript">
+  <template name="cl" value="console.log('$PROPERTY$', $PROPERTY$);" description="console log" toReformat="false" toShortenFQNames="true">
+    <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="test" value="import sinon from 'sinon';&#10;import {expect} from 'chai';&#10;&#10;let sandbox;&#10;&#10;describe('$END$', () =&gt; {&#10;    beforeEach(() =&gt; {&#10;        sandbox = sinon.sandbox.create();&#10;    });&#10;&#10;    afterEach(() =&gt; {&#10;        sandbox.restore();&#10;    });&#10;    &#10;    it('should ', () =&gt; {&#10;        expect();&#10;    });&#10;});&#10;" description="Test setup" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="it" value="it('should $DESC$', () =&gt; {&#10;    $END$&#10;});" description="Mocha: it()" toReformat="false" toShortenFQNames="true">
+    <variable name="DESC" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="fail" value="// TODO: REMOVE THIS ASSERTION&#10;expect(true).to.equal(false);" description="Mocha: Insert failing test" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="thl" value="expect($ACTUAL$).to.have.length($EXPECTATION$);$END$" description="Chai: &quot;to have length&quot; assertion" toReformat="false" toShortenFQNames="true">
+    <variable name="ACTUAL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="EXPECTATION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="iife" value="(function () {&#10;    'use strict';&#10;    &#10;}());&#10;" description="Immediately Involked Function Expression" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="de" value="describe('$title$', () =&gt; {&#10;    it('should $should$', () =&gt; {&#10;        $END$&#10;    });&#10;});" description="Mocha: describe()" toReformat="false" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="should" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cw" value="sinon.assert.calledOnce($VAR$);&#10;sinon.assert.calledWith($VAR$, $END$);" description="Assert function call with params" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cn" value="chance.natural()$END$" description="Chance.js: Natural Number" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="here" value="console.log('here');" description="Console Log here" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="us" value="'use strict';&#10;$END$" description="'use strict'" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="be" value="beforeEach(() =&gt; {&#10;    $END$         &#10;});" description="Mocha: beforeEach()" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="ae" value="afterEach(() =&gt; {&#10;    $END$         &#10;});" description="Mocha: afterEach()" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="af" value="($param$) =&gt; {$END$}" description="ES6 Arrow Function" toReformat="false" toShortenFQNames="true">
+    <variable name="param" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="te" value="expect($ACTUAL$).to.equal($EXPECTED$);" description="Chai: &quot;to equal&quot; assertion" toReformat="false" toShortenFQNames="true">
+    <variable name="ACTUAL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="EXPECTED" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="cs" value="chance.string()$END$" description="Chance.js: String" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="afo" value="$param$ =&gt; {$END$}" description="ES6 Arrow function with one property" toReformat="false" toShortenFQNames="true">
+    <variable name="param" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="itar" value="for (var $INDEX$ = 0; $INDEX$ &lt; $ARRAY$.length; $INDEX$++) {&#10;  var $VAR$ = $ARRAY$[$INDEX$];&#10;  $END$&#10;}" description="Iterate over elements in an array" toReformat="true" toShortenFQNames="true">
+    <variable name="INDEX" expression="jsSuggestIndexName()" defaultValue="&quot;i&quot;" alwaysStopAt="true" />
+    <variable name="ARRAY" expression="jsArrayVariable()" defaultValue="&quot;array&quot;" alwaysStopAt="true" />
+    <variable name="VAR" expression="jsSuggestVariableName()" defaultValue="&quot;o&quot;" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="tde" value="expect($ACTUAL$).to.deep.equal($EXPECTED$);" description="Chai: &quot;to deep equal&quot; assertion" toReformat="false" toShortenFQNames="true">
+    <variable name="ACTUAL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="EXPECTED" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+</templateSet>
