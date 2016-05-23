@@ -118,6 +118,10 @@
   <template name="tde" value="expect($ACTUAL$).to.deep.equal($EXPECTED$);" description="Chai: &quot;to deep equal&quot; assertion" toReformat="false" toShortenFQNames="true">
     <variable name="ACTUAL" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="EXPECTED" expression="" defaultValue="" alwaysStopAt="true" />
-    <context />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
   </template>
 </templateSet>
