@@ -46,7 +46,7 @@
       <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="cw" value="expect($VAR$).to.have.callCount(1);&#10;expect($VAR$).to.be.calledWith($END$);&#10;" description="Assert function call with params" toReformat="false" toShortenFQNames="true">
+  <template name="cw" value="expect($VAR$).to.have.callCount(1);&#10;expect($VAR$).to.be.calledWith($END$);" description="Assert function call with params" toReformat="false" toShortenFQNames="true">
     <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_SCRIPT" value="true" />
