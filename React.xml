@@ -9,10 +9,10 @@
       <option name="JS_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="RC" value="import React from 'react';&#10;&#10;export default class extends React.Component {&#10;    componentDidMount() {&#10;        require('../sass/$sassFileName$.scss');&#10;    }&#10;&#10;    render() {&#10;        return (&#10;            &lt;$elementType$ className=&quot;$className$&quot;&gt;&#10;                $END$&#10;            &lt;/$elementType$&gt;&#10;        );&#10;    }&#10;}&#10;" description="React Component" toReformat="false" toShortenFQNames="true">
+  <template name="RC" value="import React from 'react';&#10;&#10;export default class $componentName$ extends React.Component {&#10;    componentDidMount() {&#10;        require('../sass/$sassFileName$.scss');&#10;    }&#10;&#10;    render() {&#10;        return (&#10;            &lt;$elementType$ className=&quot;$sassFileName$&quot;&gt;&#10;                $END$&#10;            &lt;/$elementType$&gt;&#10;        );&#10;    }&#10;}&#10;" description="React Component" toReformat="false" toShortenFQNames="true">
+    <variable name="componentName" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="sassFileName" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
     <variable name="elementType" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="className" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_SCRIPT" value="true" />
       <option name="JS_EXPRESSION" value="true" />
