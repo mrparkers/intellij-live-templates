@@ -2,9 +2,6 @@
   <template name="RCSS" value=".$componentRootSelector$ {&#10;    padding: 10px;$END$&#10;}&#10;" description="React component CSS wrapper" toReformat="false" toShortenFQNames="true">
     <variable name="componentRootSelector" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
     <context>
-      <option name="CSS_PROPERTY_VALUE" value="true" />
-      <option name="CSS_DECLARATION_BLOCK" value="true" />
-      <option name="CSS_RULESET_LIST" value="true" />
       <option name="CSS" value="true" />
     </context>
   </template>
