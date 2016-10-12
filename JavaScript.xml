@@ -1,5 +1,5 @@
 <templateSet group="JavaScript">
-  <template name="cl" value="console.log('$PROPERTY$', $PROPERTY$);" description="console log" toReformat="false" toShortenFQNames="true">
+  <template name="cl" value="console.log('$PROPERTY$');" description="console log string" toReformat="false" toShortenFQNames="true">
     <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_SCRIPT" value="true" />
@@ -126,6 +126,32 @@
     <variable name="EXPECTED" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="five" value="const five = require('johnny-five'),&#10;    board = new five.Board();&#10;    &#10;board.on('ready', function () {&#10;    console.log('Ready!');&#10;    $END$&#10;});" description="Johnny-Five init" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="repl" value="this.repl.inject({&#10;    $END$&#10;});" description="Johnny-Five Read-Eval-Print-Loop" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="clv" value="console.log('$PROPERTY$', $PROPERTY$);" description="console log variable" toReformat="false" toShortenFQNames="true">
+    <variable name="PROPERTY" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JSX_HTML" value="false" />
+    </context>
+  </template>
+  <template name="thp" value="expect($shallowWrapper$).to.have.prop('$prop$').which.equals($val$);$END$" description="Chai: &quot;to have prop&quot; assertion" toReformat="false" toShortenFQNames="true">
+    <variable name="shallowWrapper" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="prop" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="val" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JSX_HTML" value="false" />
     </context>
   </template>
 </templateSet>
