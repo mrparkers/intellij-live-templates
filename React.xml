@@ -7,10 +7,10 @@
       <option name="JAVA_SCRIPT" value="true" />
     </context>
   </template>
-  <template name="RC" value="import React from 'react';&#10;&#10;export default class $componentName$ extends React.Component {&#10;    componentDidMount() {&#10;        require('../sass/$sassFileName$.scss');&#10;    }&#10;&#10;    render() {&#10;        return (&#10;            &lt;$elementType$ className=&quot;$sassFileName$&quot;&gt;&#10;                $END$&#10;            &lt;/$elementType$&gt;&#10;        );&#10;    }&#10;}&#10;" description="React Component" toReformat="false" toShortenFQNames="true">
+  <template name="RC" value="import React from 'react';&#10;&#10;export default class $componentName$ extends React.Component {&#10;    render() {&#10;        return (&#10;            &lt;$elementType$ className=&quot;$className$&quot;&gt;&#10;                $END$&#10;            &lt;/$elementType$&gt;&#10;        );&#10;    }&#10;}&#10;" description="React Component" toReformat="false" toShortenFQNames="true">
     <variable name="componentName" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="sassFileName" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
     <variable name="elementType" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="className" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_SCRIPT" value="true" />
     </context>
@@ -21,10 +21,11 @@
       <option name="JAVA_SCRIPT" value="true" />
     </context>
   </template>
-  <template name="RTS" value="import $ComponentName$ from '../../src/$ComponentPath$$END$';&#10;&#10;import React from 'react';&#10;import {shallow} from 'enzyme';&#10;&#10;import Chance from 'chance';&#10;import {expect} from 'chai';&#10;&#10;describe('$ComponentName$', () =&gt; {&#10;    let renderedElement,&#10;        chance;&#10;        &#10;    function renderComponent() {&#10;        const componentElement = React.createElement($ComponentName$);&#10;&#10;        renderedElement = shallow(componentElement);&#10;    }&#10;&#10;    beforeEach(() =&gt; {&#10;        chance = new Chance();&#10;        &#10;        renderComponent();&#10;    });&#10;&#10;    it('should have a root DOM element', () =&gt; {&#10;        expect(renderedElement.node.type).to.equal('$tagName$');&#10;        expect(renderedElement.props().className).to.equal('$ComponentPath$');&#10;    });&#10;});&#10;" description="React Component Test With Shallow Rendering" toReformat="false" toShortenFQNames="true">
+  <template name="RTS" value="import $ComponentName$ from '$ComponentPath$$END$';&#10;&#10;import React from 'react';&#10;import {shallow} from 'enzyme';&#10;&#10;import Chance from 'chance';&#10;import {expect} from 'chai';&#10;&#10;describe('$ComponentName$', () =&gt; {&#10;    let renderedElement,&#10;        chance;&#10;        &#10;    function renderComponent() {&#10;        const componentElement = &lt;$ComponentName$ /&gt;;&#10;&#10;        renderedElement = shallow(componentElement);&#10;    }&#10;&#10;    beforeEach(() =&gt; {&#10;        chance = new Chance();&#10;        &#10;        renderComponent();&#10;    });&#10;&#10;    it('should have a root DOM element', () =&gt; {&#10;        expect(renderedElement).to.have.tagName('$tagName$');&#10;        expect(renderedElement).to.have.className('$className$');&#10;    });&#10;});&#10;" description="React Component Test With Shallow Rendering" toReformat="false" toShortenFQNames="true">
     <variable name="ComponentName" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="ComponentPath" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="tagName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="className" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="JAVA_SCRIPT" value="true" />
       <option name="JSX_HTML" value="false" />
